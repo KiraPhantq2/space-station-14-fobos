@@ -36,6 +36,7 @@
                             <Button Name="Telegram" Text="Telegram" MinSize="125 10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                             <Button Name="Site" Text="Сайт" MinSize="125 10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                             <Button Name="AHelpButton" Access="Public" Text="{Loc 'ui-lobby-ahelp-button'}" MinSize="125 10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                            <Button Name="CollapseButton" Text="Скрыть UI" MinSize="125 10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>  
                         </BoxContainer>
                     </BoxContainer>
                 </PanelContainer>
@@ -88,9 +89,21 @@
                             <widgets:ChatBox Name="Chat" Access="Public" VerticalExpand="True" Margin="3 3 3 3" HorizontalExpand="True" HorizontalAlignment="Stretch"/>
                         </BoxContainer>
                     </PanelContainer>
-
                 </BoxContainer>
             </PanelContainer>
         </SplitContainer>
+        <PanelContainer Name="ExpandPanel"
+                StyleClasses="AngleRect" 
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="0 2 2 0"
+                Visible="False">
+            <TextureButton Name="ExpandButton"
+                        TexturePath="filled_left_arrow.svg.192dpi"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        ModulateSelfOverride="#DEDEDE"
+                        Scale="0.5 0.5"/>
+        </PanelContainer>
     </BoxContainer>
 </lobbyUi:LobbyGui>

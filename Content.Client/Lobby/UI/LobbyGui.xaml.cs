@@ -34,6 +34,9 @@ namespace Content.Client.Lobby.UI
             Rules.OnPressed += _ => new RulesAndInfoWindow().Open();
             Guidebook.OnPressed += _ => UserInterfaceManager.GetUIController<GuidebookUIController>().ToggleGuidebook();
             Changelog.OnPressed += _ => UserInterfaceManager.GetUIController<ChangelogUIController>().ToggleWindow();
+
+            CollapseButton.OnPressed += _ => TogglePanel(false);
+            ExpandButton.OnPressed += _ => TogglePanel(true);
         }
 
         public void SwitchState(LobbyGuiState state)
@@ -50,6 +53,12 @@ namespace Content.Client.Lobby.UI
                     UserInterfaceManager.GetUIController<LobbyUIController>().ReloadCharacterSetup();
                     break;
             }
+        }
+
+        private void TogglePanel(bool value)
+        {
+            SplitContainer.Visible = value;
+            ExpandPanel.Visible = !value;
         }
 
         public enum LobbyGuiState : byte
